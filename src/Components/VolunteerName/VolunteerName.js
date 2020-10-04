@@ -1,19 +1,24 @@
 import React from 'react';
-import { Card, CardTitle, CardText, CardImg, CardImgOverlay, Container } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Card, CardTitle, CardImg, CardImgOverlay, Container, Row, Col } from 'reactstrap';
 
 
-const VolunteerName = () => {
+const VolunteerName = (props) => {
+  const { name, photo, id } = props.task
   return (
-    <Container>
-      <Card>
-        <CardImg width="300px" height="300px" src={'https://i.ibb.co/svWhBjv/Rectangle-26.png'} alt="Card image cap" />
-        <CardImgOverlay>
-          <CardTitle><h1>Bed Room</h1></CardTitle>
 
 
-        </CardImgOverlay>
-      </Card>
-    </Container>
+    <Col md={3}>
+      <Link to={`/registration/${id}`}>
+        <Card>
+          <CardImg width="300px" height="300px" src={photo} alt="Card image cap" />
+          <CardImgOverlay>
+            <CardTitle><h1>{name}</h1></CardTitle>
+          </CardImgOverlay>
+        </Card>
+      </Link>
+    </Col>
+
   );
 };
 
