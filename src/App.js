@@ -14,6 +14,8 @@ import Registration from './Components/RegistrationForm/Registration';
 import AdminUpdateVolunteers from './Components/Admin/AdminUpdateVolunteers';
 import PrivateRouter from './Components/PrivateRoute/PrivateRoute';
 import InvolvedVolunteering from './Components/InvolvedVolunteering/InvolvedVolunteering';
+import StoreDataFromAdmin from './Components/Admin/StoreDataFromAdmin';
+import NoMatch from './Components/NoMatch/NoMatch';
 
 export const UserContext = createContext()
 export const UserVolunteerContext = createContext()
@@ -28,7 +30,6 @@ function App() {
       
       <Router>
       <Header></Header>
-      <h1>Name: {loggedInUser.name}</h1>
         <Switch>
           <Route path = '/home'>
             <Home></Home>
@@ -39,17 +40,26 @@ function App() {
           <Route path = '/admin'>
             <AdminUpdateVolunteers/>
           </Route>
-          <Route path = '/home'>
-            <Home></Home>
+          <Route path = '/allvolunteerinfo'>
+          <AdminUpdateVolunteers/>
           </Route>
           <Route path = '/login'>
           <Login/>
+          </Route>
+          <Route path = '/storeatafromadmin'>
+            <StoreDataFromAdmin></StoreDataFromAdmin>
+          </Route>
+          <Route path = '/home'>
+            <Home></Home>
           </Route>
           <Route path = '/involvedvolunteer'>
           <InvolvedVolunteering></InvolvedVolunteering>
           </Route>
           <Route exact path = '/'>
             <Home></Home>
+          </Route>
+          <Route exact path = '/*'>
+            <NoMatch/>
           </Route>
         </Switch>
       </Router>

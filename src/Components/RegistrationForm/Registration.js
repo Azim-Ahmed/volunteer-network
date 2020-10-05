@@ -8,12 +8,12 @@ const Registration = () => {
 
   const [taskItems] = useContext(UserVolunteerContext)
   const [loggedInUser] = useContext(UserContext)
-  
 
-  const registrationDetails = taskItems.find(tasks => tasks.id === parseInt(id))
 
- 
- 
+  const registrationDetails = taskItems.find(tasks => parseInt(tasks.id) === parseInt(id))
+
+
+
 
   const [volunteer, setVolunteer] = useState({
     name: loggedInUser.name,
@@ -22,21 +22,23 @@ const Registration = () => {
     volunteeringPhoto: registrationDetails.photo
   })
 
-  const handleInput = (e) => {
-           const volunteerInfo = { ...volunteer };
-            volunteerInfo[e.target.name] = e.target.value;
-            console.log(volunteerInfo);
-            setVolunteer(volunteerInfo);
+  const handleBlurInput = (e) => {
+    const volunteerInfo = { ...volunteer };
+    volunteerInfo[e.target.name] = e.target.value;
+    setVolunteer(volunteerInfo);
 
   }
-  const submitFormall = () => {
-    fetch('http://localhost:4000/addVolunteer',
+  const submitFormAllData = () => {
+    fetch('http://localhost:4000/addSingleVolunteer',
       {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(volunteer)
       }
     )
+      .then(result => {
+        alert("Event Added for Volunteering")
+      })
 
   }
 
@@ -52,14 +54,14 @@ const Registration = () => {
             type="text"
             name="name"
             defaultValue={loggedInUser.name}
-            onBlur={handleInput}
+            onBlur={handleBlurInput}
             placeholder=" Enter Your Full Name"
           />
         </FormGroup>
         <FormGroup>
           <Label for="location">Email</Label>
           <Input
-            onBlur={handleInput}
+            onBlur={handleBlurInput}
             type="location"
             name="email"
             defaultValue={loggedInUser.email}
@@ -71,7 +73,7 @@ const Registration = () => {
           <Input
             type="date"
             name="date"
-            onBlur={handleInput}
+            onBlur={handleBlurInput}
             id="exampleDatetime"
             placeholder="date"
           />
@@ -81,7 +83,7 @@ const Registration = () => {
           <Input
             type="text"
             name="description"
-            onBlur={handleInput}
+            onBlur={handleBlurInput}
             id="exampleDate"
             placeholder="Why do you want to involve in volunteering "
           />
@@ -93,13 +95,13 @@ const Registration = () => {
             type="text"
             name="volunteeringName"
             defaultValue={registrationDetails.name}
-            onBlur={handleInput}
+            onBlur={handleBlurInput}
             id="exampleDate"
             placeholder="Organize Books at the Library "
           />
         </FormGroup>
 
-        <Link to='/involvedvolunteer'><Button onClick={submitFormall} type="submit" size='lg' block color="warning">Registration</Button></Link>
+        <Link to='/involvedvolunteer'><Button onClick={submitFormAllData} type="submit" size='lg' block color="warning">Registration</Button></Link>
       </Form>
     </Container>
   );

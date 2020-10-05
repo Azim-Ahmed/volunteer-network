@@ -42,9 +42,21 @@ const Login = () => {
 
       <div style={{ textAlign: "center" }}>
 
-        <button onClick={handleGoogleSignIn}>  <i className="fab fa-google"></i>    Continue with google
-        </button>
+       
       </div>
+      <div className="SignIn-wrapper text-center " >
+            <div className="SignIn-Header text-enter  m-auto " >
+                <img src="https://i.imgur.com/U7HMLBC.png" alt="" />
+            </div>
+            <div className="SignIn-body  " >
+                <div className="w-50 mx-auto p-5 text-center mt-5   " >
+                    <h1 className="mb-5" >Login With</h1>
+                    <button style = {{color : "green", width : "300px", borderRadius : "8px"}} onClick={handleGoogleSignIn}>  <i className="fab fa-google"></i>    Continue with google
+        </button>
+                    <p className="mt-4" >Don't have an acount  <a href="/" >Create an acount</a> </p>
+                </div>
+            </div>
+        </div>
     </Container>
   );
 };
