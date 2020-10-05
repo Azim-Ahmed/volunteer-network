@@ -4,7 +4,7 @@ import { Button, Card, CardBody, CardImg, CardText, CardTitle, Col } from 'react
 const VolunteerShow = ({ taskItem }) => {
   const { date, volunteeringName, _id, volunteeringPhoto } = taskItem
   const handleDelete = (id) => {
-    fetch("http://localhost:4000/delete/?id=" + id, {
+    fetch("https://sheltered-ravine-14450.herokuapp.com/delete/?id=" + id, {
       method: "DELETE",
     })
       .then(res => res.json())

@@ -8,13 +8,13 @@ const AdminUpdateVolunteers = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:4000/involvedvolunteerforadmin')
+        fetch('https://sheltered-ravine-14450.herokuapp.com/involvedvolunteerforadmin')
             .then(res => res.json())
             .then(data => setLoggedInVolunteer(data))
     }, [loggedInVolunteer])
 
     const handleDeleteAdmin = (id) => {
-        fetch("http://localhost:4000/delete/?id=" + id, {
+        fetch("https://sheltered-ravine-14450.herokuapp.com/delete/?id=" + id, {
             method: "DELETE",
         })
             .then(res => res.json())

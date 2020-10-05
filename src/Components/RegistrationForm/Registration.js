@@ -29,7 +29,7 @@ const Registration = () => {
 
   }
   const submitFormAllData = () => {
-    fetch('http://localhost:4000/addSingleVolunteer',
+    fetch('https://sheltered-ravine-14450.herokuapp.com/addSingleVolunteer',
       {
         method: 'POST',
         headers: { 'content-type': 'application/json' },

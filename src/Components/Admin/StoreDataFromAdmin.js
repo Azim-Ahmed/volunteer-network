@@ -20,7 +20,7 @@ const StoreDataFromAdmin = () => {
 
     const handleAll = () => {
 
-        fetch('http://localhost:4000/addVolunteer',
+        fetch('https://sheltered-ravine-14450.herokuapp.com/addVolunteer',
             {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },

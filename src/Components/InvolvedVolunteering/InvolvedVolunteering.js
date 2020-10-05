@@ -8,7 +8,7 @@ const InvolvedVolunteering = () => {
     const [loggedInVolunteer, setLoggedInVolunteer] = useState([])
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     useEffect(() => {
-        fetch('http://localhost:4000/involvedvolunteer?email=' + loggedInUser.email)
+        fetch('https://sheltered-ravine-14450.herokuapp.com/involvedvolunteer?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setLoggedInVolunteer(data))
     }, [loggedInVolunteer])

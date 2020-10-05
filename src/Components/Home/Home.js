@@ -9,7 +9,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:4000/volunteers')
+        fetch('https://sheltered-ravine-14450.herokuapp.com/volunteers')
             .then(res => res.json())
             .then(data => setTaskItems(data))
     }, [])
