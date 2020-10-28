@@ -1,8 +1,8 @@
-# **"Creative Agency" is a full stack or MERN stack Website.**
+# **"Volunteer-Network" is a full stack or MERN stack Website.**
 
-## Live Link [volunteer-network](https://volunteer-network-portal.web.app)
+## Live Link [Volunteer-Network](https://volunteer-network-portal.web.app)
 
-## Server site Repository [volunteer-network-Server](https://github.com/Azim-Ahmed/volunteer-network-server)
+## Server site Repository [Volunteer-Network-Server](https://github.com/Azim-Ahmed/volunteer-network-server)
 ### Back to [Resume](https://drive.google.com/file/d/1J1O8AZANjsDNsrOgfZI-azmHBingnUAT/view?usp=sharing)
 
 - A website for those enthusiast people who want to join in volunteer service  
